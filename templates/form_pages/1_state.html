@@ -1,4 +1,9 @@
 {% extends "form.html" %}
 {% block form_question %}
-State
+<tr><td><label for="user_selection">What state do you live in?</label></td></tr>
+<tr><td><select id="user_selection" name="user_selection">
+    {% for state in response.form_payload.choices %}
+    <option value="{{state.abbreviation}}">{{state.name}}</option>
+    {% endfor %}
+</select></td></tr>
 {% endblock %}

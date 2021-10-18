@@ -1,6 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
-Form question #{{request.values.get('step_id')}}:
-<br />
-{% block form_question %}{% endblock %}
+<br/>
+<form method="post" class="d-flex align-items-center">
+    <div class="col-12">
+        <table class="container table align-items-center">
+            <thead><tr><th>
+                Form question #{{request.values.get('step_id')}}:
+            </th></tr></thead>
+            {% block form_question %}{% endblock %}
+            <tr><td>
+                <button type="submit" class="btn btn-warning">
+                    Next
+                </button>
+            </td></tr>
+        </table>
+    </div>
+</form>
+<div>
+    {% for error in response.error_messages %}
+    <br/>
+    <div class="alert alert-danger" role="alert">{{error}}</div>
+    {% endfor %}
+</div>
 {% endblock %}

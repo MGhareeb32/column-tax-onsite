@@ -1,4 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-Done!
+<table class="container table align-items-center">
+    <thead><tr><th>You owe:</th></tr></thead>
+<tbody>
+    <tr><td>${{response.tax.federal}} in federal tax.</td></tr>
+    <tr><td>${{response.tax.state}} in state tax.</td></tr>
+</tbody>
+</table>
 {% endblock %}

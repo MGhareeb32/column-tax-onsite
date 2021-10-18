@@ -1,4 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
-You are at the home page
+<br/>
+<form method="post">
+
+    <table class="container table align-items-center">
+        <tbody>
+        <tr>
+            <td>Welcome {{request.values.user_id}}!</td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" class="btn btn-warning">
+                    Get Estimate
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
 {% endblock %}

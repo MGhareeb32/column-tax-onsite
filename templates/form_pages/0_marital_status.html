@@ -1,4 +1,8 @@
 {% extends "form.html" %}
 {% block form_question %}
-Marital status
+<tr><td><label for="user_selection">Are you single or married?</label></td></tr>
+<tr><td><select id="user_selection" name="user_selection" class="col-6 form-control form-control-dark">
+    <option value="single">Single</option>
+    <option value="married">Married</option>
+</select></td></tr>
 {% endblock %}
